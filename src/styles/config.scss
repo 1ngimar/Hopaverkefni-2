@@ -2,9 +2,21 @@ $max-width: 1200px;
 $gutter: 20px;
 $font-main: "Lora", Times, serif;
 $font-heading: "Roboto Mono", monospace;
+$color-black: #000;
+$color-white: #fcffd2;
+$color-darkGrey: #999;
+$color-grey:#aaa;
+$color-lightGrey: #ccc;
+$color-lightGreen:#2d2;
+$color-green: #1a1;
+$color-pink:#cc9694;
 $primary-font-size: 16px;
 $small-font-size: 24px;
 $medium-font-size: 32px;
 $large-font-size: 48px;
 $gutter: 20px;
 $hover-transition: all 300ms ease-in-out;
+
+// Media queries
+$media-medium: 500px;
+$media-large: 1500px;
