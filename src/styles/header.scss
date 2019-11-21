@@ -1,20 +1,40 @@
 .header {
   max-width: 100%;
-  padding-bottom: $gutter/2;
+  padding-bottom: unset;
 
   &__img {
+    height: 16em;
     background-size: cover;
   }
 
+  &__textArea {
+    display: flex;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
   &__category {
+    display: flex;
+    justify-content: center;
     font-family: $font-heading;
     font-size: $medium-font-size;
-    color: rgb(236, 4, 4);
+    font-weight: normal;
+    text-transform: uppercase;
   }
 
   &__title {
+    display: flex;
+    justify-content: center;
     font-family: $font-heading;
     font-size: $large-font-size;
     font-weight: bold;
   }
+}
+
+.img-protection {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
 }
