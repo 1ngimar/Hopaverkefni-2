@@ -1,0 +1,13 @@
+.cards {
+  &__grid {
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+
+  &__col {
+    display: flex;
+  }
+}

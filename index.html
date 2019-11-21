@@ -15,10 +15,12 @@
 
 <body>
   <header class="header">
-    <div class="header__img grid__row" style="background: url('./img/header.jpg') 50% 50% / cover no-repeat;">
+    <div class="header__img grid__row" style="background: url('./img/header.jpg') 100% / cover no-repeat;">
       <div class="img-protection">
-        <h4 class="header__category">Fyrirlestrar</h4>
-        <h1 class="header__title">Vefforritun</h1>
+        <dev class="header__textArea">
+          <h4 class="header__category">Vefforritun</h4>
+          <h1 class="header__title">Fyrirlestrar</h1>
+        </dev>
       </div>
     </div>
   </header>
@@ -28,32 +30,40 @@
     <button class="navBar__button navBar__JS">JavaScript</button>
   </nav>
   <main class="grid">
-    <div class="list grid__row">
-      <div class="list__item">
-        <a href="./fyrirlestur.html?slug=html-sagan" class="thumb grid__col-4 html">
-          <img src="./img/thumb1.jpg" class="thumb__img">
-          <div class="thumb__bottom">
-            <div class="thumb__text">
-              <h4 class="thumb__cat">html</h4>
-              <h1>Sagan</h1>
-            </div>
-            <div class="thumb__checkmark thumb__checked">✔</div>
-          </div>
-        </a>
+    <div class="cards">
+      <div class="cards__grid__row">
+        <div class="cards__col">
+          <section class="card">
+            <a href="./fyrirlestur.html?slug=html-sagan" class="thumb html">
+              <img src="./img/thumb1.jpg" class="thumb__img">
+              <div class="card__bottom">
+                <div class="card__text">
+                  <h4 class="card__category">html</h4>
+                  <h1 class="card__title">Sagan</h1>
+                </div>
+                <div class="thumb__checkmark thumb__checked">✔</div>
+              </div>
+            </a>
+          </section>
+        </div>
       </div>
-      <div class="list__item">
-        <a href="Linkur á fyrirlestur" class="thumb grid__col-4 html">
-          <img src="./img/thumb2.jpg" class="thumb__img">
-          <div class="thumb__bottom">
-            <div class="thumb__text">
-              <h4 class="thumb__cat">html</h4>
-              <h1>Aðgengi</h1>
+      <div class="cards">
+          <div class="cards__grid__row">
+            <div class="cards__col">
+              <section class="card">
+                <a href="./fyrirlestur.html?slug=html-adgengi" class="thumb html">
+                  <img src="./img/thumb2.jpg" class="thumb__img">
+                  <div class="card__bottom">
+                    <div class="card__text">
+                      <h4 class="card__category">html</h4>
+                      <h1 class="card__title">Aðgengi</h1>
+                    </div>
+                    <div class="thumb__checkmark">✔</div>
+                  </div>
+                </a>
+              </section>
             </div>
-            <div class="thumb__checkmark">✔</div> <!--þessi er unchecked-->
           </div>
-        </a>
-      </div>
-    </div>
   </main>
   <script src="dist/bundle.js"></script>
 </body>
