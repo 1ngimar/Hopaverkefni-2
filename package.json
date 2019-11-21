@@ -11,12 +11,17 @@
     "sass-watch": "node-sass --source-map-embed --watch --recursive src/styles/styles.scss ./dist/styles.css",
     "test": "npm-run-all eslint stylelint",
     "compile-js": "rollup ./src/index.js --file ./dist/bundle.js  --format iife --watch",
-    "dev": "npm-run-all --parallel sass sass-watch browser-sync compile-js"
+    "dev": "npm-run-all --parallel sass sass-watch browser-sync compile-js",
+    "babel": "babel src --out-dir dist",
+    "babel-watch": "babel src --out-dir dist --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
     "browser-sync": "^2.26.7",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -27,5 +32,8 @@
     "rollup-plugin-babel": "^4.3.3",
     "stylelint": "^9.10.1",
     "stylelint-config-primer": "^2.2.11"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0"
   }
 }
