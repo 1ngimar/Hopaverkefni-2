@@ -32,8 +32,16 @@ h4 {
 }
 
 img { /* stylelint-disable-line */
+  width: 100%;
   max-width: 100%;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @import "buttons.scss";
 @import "header.scss";
+@import "cards.scss";

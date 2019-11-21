@@ -1,5 +1,5 @@
 
-import { createListItem } from './lib/helpers';
+import createCard from './lib/cards';
 
 // Fetches lectures.json asynchronously from root of project
 async function getLectures() {
@@ -12,12 +12,15 @@ async function getLectures() {
 async function init() {
   // Get lectures as an array
   const lectures = await getLectures();
+  const cards = document.querySelector('.cards');
 
   // Loop through all the lectures
   for (let i = 0; i < lectures.length; i += 1) {
     const lecture = lectures[i];
-    // Create html chunk for each lecture
-    const listItemHtml = createListItem(lecture);
+    // Create html card chunk for each lecture
+    const card = createCard(lecture);
+    // Append the card to cards elememnt
+    cards.appendChild(card);
   }
 }
 
