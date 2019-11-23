@@ -3,6 +3,7 @@ import { createElement } from './helpers';
 function createCard(lecture) {
   const href = `./fyrirlestur.html?slug=${lecture.slug}`;
   const card = createElement('a', 'card', null, 'href', href);
+
   let thumbnail = null;
 
   if (lecture.thumbnail) {
