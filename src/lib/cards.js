@@ -24,4 +24,17 @@ function createCard(lecture) {
   return card;
 }
 
+export function createCards(lectures, cards) {
+  // eslint-disable-next-line no-param-reassign
+  cards.innerHTML = '';
+  // Loop through all the lectures
+  for (let i = 0; i < lectures.length; i += 1) {
+    const lecture = lectures[i];
+    // Create html card chunk for each lecture
+    const card = createCard(lecture);
+    // Append the card to cards elememnt
+    cards.appendChild(card);
+  }
+}
+
 export default createCard;

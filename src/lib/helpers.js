@@ -29,3 +29,19 @@ export async function getLectures() {
 
   return data.lectures;
 }
+
+export function filterLectures(lectures, html, css, js) {
+  const filtLectArray = [];
+
+  for (let i = 0; i < lectures.length; i += 1) {
+    const lecture = lectures[i];
+
+    if ((lecture.category.toLowerCase() === 'html' && html)
+        || (lecture.category.toLowerCase() === 'css' && css)
+        || (lecture.category.toLowerCase() === 'javascript' && js)) {
+      filtLectArray.push(lecture);
+    }
+  }
+
+  return filtLectArray;
+}
