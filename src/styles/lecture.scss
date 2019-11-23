@@ -1,0 +1,60 @@
+
+.lecture__container {
+  max-width: 600px;
+  padding: 50px 0;
+}
+
+.lecture__video {
+  width: 100%;
+  height: 400px;
+}
+
+.lecture__header__image {
+  width: 100%;
+  height: 500px;
+  background-image: url(/img/code.jpg);
+  background-repeat: no-repeat;
+}
+
+.lecture__header__center {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lecture__header__category {
+  font-size: $small-font-size;
+}
+
+.lecture__header__title {
+  font-size: $large-font-size;
+}
+
+.quote {
+  background-color: $color-lightGrey;
+}
+
+.lecture__image {
+  width: 100%;
+  height: 100%;
+}
+
+.lecture__code {
+  font-family: "Courier New";
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lecture__button {
+  font-family: "Courier New";
+}
+
+.lecture__link {
+  font-family: "Courier New";
+}

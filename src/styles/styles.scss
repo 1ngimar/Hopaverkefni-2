@@ -1,5 +1,5 @@
 // stylelint-disable selector-max-type, selector-max-compound-selectors
-@import "config";
+@import "config.scss";
 
 * {
   padding: 0;
@@ -45,3 +45,4 @@ img { /* stylelint-disable-line */
 @import "buttons.scss";
 @import "header.scss";
 @import "cards.scss";
+@import "lecture.scss";
