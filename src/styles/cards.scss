@@ -2,24 +2,51 @@
   display: grid;
   grid-gap: $gutter;
   align-content: center;
-  width: 100%;
+  width: 96%;
   height: 100%;
 }
 
+/* .cards {
+  display: flex;
+  padding: $gutter/2;
+  margin: $gutter/2;
+  flex-direction: column;
+} */
+
 .card {
   width: 100%;
+  margin: $gutter;
+  text-decoration: none;
+
+  &__bottom {
+    background-color: $color-lightGrey;
+  }
+
+  &__category {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    font-family: $font-heading;
+    color: $color-black;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    padding: 10px;
+    color: $color-black;
+  }
 }
 
 .card__img {
   width: 100%;
 }
 
-.card__placeholder {
-  min-height: 235px;
-  background-color: $color-darkGrey;
-}
-
 @media only screen and (min-width: $media-large) {
+  .card__placeholder { //þurfum að laga hér að stærðin breytist öðruvísi en hin kortin eftir 1000
+    min-height: 235px;
+    background-color: $color-darkGrey;
+  }
+
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
