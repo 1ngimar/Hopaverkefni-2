@@ -1,6 +1,7 @@
 
-import createCard, {createCards} from './lib/cards';
+import { createCards } from './lib/cards';
 import { getLectures, filterLectures } from './lib/helpers';
+import createLecture from './lib/lecture';
 
 async function init() {
   // Get lectures as an array
@@ -13,7 +14,6 @@ async function init() {
   //  Checks if user is on front page or lecture page
   if (cards) {
     createCards(lectures, cards);
-
     const buttons = document.querySelectorAll('.navBar__button');
 
     const setButtonsState = (e) => {
@@ -64,6 +64,7 @@ async function init() {
       buttons[i].addEventListener('click', setButtonsState);
     }
   } else {
+    // This code is on the lecture page
     const url = window.location.search;
     const idx = url.indexOf('=');
     const slug = url.substring(idx + 1, url.length);
@@ -73,7 +74,7 @@ async function init() {
 
       if (lecture.slug === slug) {
         // create lecture html page
-
+        createLecture(lecture);
       }
     }
   }
