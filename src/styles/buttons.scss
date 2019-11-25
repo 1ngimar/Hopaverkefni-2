@@ -1,10 +1,10 @@
 .navBar {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 
   &__button {
-    width: 250px;
+    width: auto;
     padding: 5px 15px;
     margin: 30px;
     font-size: $medium-font-size;
@@ -26,7 +26,7 @@
 
 @media only screen and (min-width: $media-small) {
   .navBar {
-    justify-content: space-around;
+    justify-content: center;
   }
 }
 
