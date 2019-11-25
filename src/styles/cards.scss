@@ -11,17 +11,8 @@
   text-decoration: none;
   transition: $hover-transition;
 
-  &:hover {
-    background-color: $color-grey;
-  }
-
-  &__bottom {
+  .card__bottom {
     background-color: $color-lightGrey;
-
-    &:hover {
-      background-color: $color-grey;
-    }
-  }
 
   &__category {
     display: flex;
@@ -40,6 +31,11 @@
 
 .card__img {
   width: 100%;
+}
+
+.card:hover,
+.card__bottom:hover {
+  background-color: $color-grey; //Vantar hjálp hérna SNÆR!!!!
 }
 
 @media only screen and (min-width: $media-large) {
