@@ -80,6 +80,9 @@ async function init() {
   }
 }
 
+/* þarf að gera svona element <div class="thumbnail__checkmark">✔</div> 
+inn í card.bottom */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   init();

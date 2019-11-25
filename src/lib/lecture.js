@@ -28,6 +28,11 @@ function createContent(content) {
     if (item.type === 'text') {
       const text = createElement('p', null, item.data);
       container.appendChild(text);
+
+      /* const break = text.indexOf('\n') 
+      if (break) {
+        container.appendChild('\n')
+      } SNÆR HJÁLPAÐU OKKUR!!!*/
     } else if (item.type === 'image') {
       const image = createElement('img', null, null, 'src', item.data);
       image.setAttribute('alt', item.caption);
