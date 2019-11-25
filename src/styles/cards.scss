@@ -11,12 +11,16 @@
   text-decoration: none;
   transition: $hover-transition;
 
-  &__bottom {
-    background-color: $color-lightGrey;
-  }
-
   &:hover {
     background-color: $color-grey;
+  }
+
+  &__bottom {
+    background-color: $color-lightGrey;
+
+    &:hover {
+      background-color: $color-grey;
+    }
   }
 
   &__category {
