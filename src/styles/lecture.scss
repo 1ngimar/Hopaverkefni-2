@@ -47,6 +47,7 @@
 
 .lecture__header__category {
   font-size: $small-font-size;
+  text-transform: uppercase;
 }
 
 .lecture__header__title {
@@ -71,13 +72,22 @@
 footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 .lecture__button {
+  padding: $gutter / 2;
+  margin: $gutter / 2;
   font-family: "Courier New";
+  font-size: $primary-font-size;
+  border: 0;
 }
 
 .lecture__link {
+  padding: $gutter / 2;
+  margin: $gutter / 2;
   font-family: "Courier New";
+  font-size: $primary-font-size;
+  color: $color-black;
+  text-decoration: none;
 }

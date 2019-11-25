@@ -1,5 +1,13 @@
 import { createElement } from './helpers';
 
+function setLectureTitle(lecture) {
+  const lectureTitle = document.querySelector('.lecture__title');
+
+  if (lecture.title) {
+    lectureTitle.innerHTML = lecture.title;
+  }
+}
+
 function setBannerData(lecture) {
   const bannerImage = document.querySelector('.lecture__header__image');
   bannerImage.style.backgroundImage = `url('/${lecture.image}')`;
@@ -54,6 +62,7 @@ function createContent(content) {
 function createLecture(lecture) {
   console.log(lecture);
 
+  setLectureTitle(lecture);
   setBannerData(lecture);
   createContent(lecture.content);
 }

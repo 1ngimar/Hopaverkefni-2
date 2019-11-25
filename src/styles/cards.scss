@@ -11,9 +11,14 @@
   //padding-left: 10px;
   //margin: $gutter;
   text-decoration: none;
+  transition: $hover-transition;
 
   &__bottom {
     background-color: $color-lightGrey;
+
+    &:hover {
+      background-color: $color-grey;
+    }
   }
 
   &__category {
@@ -38,7 +43,12 @@
 @media only screen and (min-width: $media-large) {
   .card__placeholder { //þurfum að laga hér að stærðin breytist öðruvísi en hin kortin eftir 1000
     min-height: 235px;
-    background-color: $color-darkGrey;
+    background-color: $color-lightGrey;
+    transition: $hover-transition;
+
+    &:hover {
+      background: $color-grey;
+    }
   }
 
   .cards {
