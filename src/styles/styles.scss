@@ -39,7 +39,14 @@ img { /* stylelint-disable-line */
 .container {
   position: relative;
   max-width: 1200px;
+  padding: 0 $gutter;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: $media-large) {
+  .container {
+    padding: 0;
+  }
 }
 
 @import "buttons.scss";

@@ -26,13 +26,15 @@ function createContent(content) {
     const item = content[i];
 
     if (item.type === 'text') {
-      const text = createElement('p', null, item.data);
-      container.appendChild(text);
+      const newLine = item.data.indexOf('\n');
 
-      /* const break = text.indexOf('\n') 
-      if (break) {
-        container.appendChild('\n')
-      } SNÆR HJÁLPAÐU OKKUR!!!*/
+      // check if newLine exists in data
+      if (newLine !== -1) {
+        item.data = item.data.replace(/\r?\n/g, '<br /><br />');
+      }
+
+      const textElement = createElement('p', null, item.data);
+      container.appendChild(textElement);
     } else if (item.type === 'image') {
       const image = createElement('img', null, null, 'src', item.data);
       image.setAttribute('alt', item.caption);
@@ -58,15 +60,13 @@ function createContent(content) {
 
       container.appendChild(ulElement);
     } else if (item.type === 'code') {
-      const code = createElement('pre', null, item.data);
+      const code = createElement('xmp', null, item.data);
       container.appendChild(code);
     }
   }
 }
 
 function createLecture(lecture) {
-  console.log(lecture);
-
   setLectureTitle(lecture);
   setBannerData(lecture);
   createContent(lecture.content);

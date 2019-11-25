@@ -1,19 +1,26 @@
 
 import { createCards } from './lib/cards';
-import { getLectures, filterLectures } from './lib/helpers';
+import { getLectures, filterLectures, createElement } from './lib/helpers';
 import createLecture from './lib/lecture';
 
 async function init() {
   // Get lectures as an array
   const lectures = await getLectures();
   const cards = document.querySelector('.cards');
+  const isFrontPage = document.querySelector('.isFrontpage');
   let htmlButton = false;
   let cssButton = false;
   let jsButton = false;
+  let finishedLectures = localStorage.getItem('finishedLectures');
+
+  if (finishedLectures) {
+    finishedLectures = JSON.parse(finishedLectures);
+  }
 
   //  Checks if user is on front page or lecture page
-  if (cards) {
-    createCards(lectures, cards);
+  if (isFrontPage) {
+    // Create all cards
+    createCards(lectures, cards, finishedLectures);
     const buttons = document.querySelectorAll('.navBar__button');
 
     const setButtonsState = (e) => {
@@ -50,13 +57,14 @@ async function init() {
           el.classList.add(activeClass);
         }
       }
+
       const isUnfiltered = !htmlButton && !cssButton && !jsButton;
 
       if (isUnfiltered) {
-        createCards(lectures, cards);
+        createCards(lectures, cards, finishedLectures);
       } else {
         const filteredLectures = filterLectures(lectures, htmlButton, cssButton, jsButton);
-        createCards(filteredLectures, cards);
+        createCards(filteredLectures, cards, finishedLectures);
       }
     };
 
@@ -68,19 +76,49 @@ async function init() {
     const url = window.location.search;
     const idx = url.indexOf('=');
     const slug = url.substring(idx + 1, url.length);
+    const lectureButton = document.querySelector('.lecture__button');
+    let lecture = null;
 
     for (let i = 0; i < lectures.length; i += 1) {
-      const lecture = lectures[i];
+      const currentLecture = lectures[i];
 
-      if (lecture.slug === slug) {
+      if (currentLecture.slug === slug) {
+        lecture = currentLecture;
         // create lecture html page
-        createLecture(lecture);
+        createLecture(currentLecture);
       }
     }
+
+    lectureButton.addEventListener('click', (e) => {
+      const buttonElement = e.target;
+      // Changing button inner text
+      buttonElement.innerHTML = 'Fyrirlestur kláraður';
+      // Add active class to button
+      buttonElement.classList.add('lecture__button--active');
+      // create checkmark element
+      const checkmarkElement = createElement('span', 'lecture__checkmark', '&#10003;');
+      // Insert checkmark element as first child in button element
+      buttonElement.insertBefore(checkmarkElement, buttonElement.childNodes[0]);
+
+      // Get finishedLectures from localStorage
+      const cachedLectured = localStorage.getItem('finishedLectures');
+      let slugsArray = [];
+
+      if (finishedLectures) {
+        const parsedArr = JSON.parse(cachedLectured);
+        // Merge arrays
+        slugsArray = slugsArray.concat(parsedArr);
+      }
+
+      // Add new slug to existing slugs array
+      slugsArray.push(lecture.slug);
+      // Save updated or new slugs array to localStorage
+      localStorage.setItem('finishedLectures', JSON.stringify(slugsArray));
+    });
   }
 }
 
-/* þarf að gera svona element <div class="thumbnail__checkmark">✔</div> 
+/* þarf að gera svona element <div class="thumbnail__checkmark">✔</div>
 inn í card.bottom */
 
 
