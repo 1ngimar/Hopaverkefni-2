@@ -76,7 +76,7 @@ async function init() {
     const url = window.location.search;
     const idx = url.indexOf('=');
     const slug = url.substring(idx + 1, url.length);
-    const lectureButton = document.querySelector('.lecture__button');
+    const lectureButton = document.querySelector('.lecture__footer__button');
     let lecture = null;
 
     for (let i = 0; i < lectures.length; i += 1) {
