@@ -7,7 +7,7 @@
 
 .card {
   width: 100%;
-  margin-bottom: $gutter * 2;
+  margin-bottom: $gutter*2;
   text-decoration: none;
   transition: $hover-transition;
 }
@@ -22,14 +22,14 @@
 .card__category {
   display: flex;
   justify-content: flex-start;
-  padding: 10px;
+  padding: $gutter/2;
   font-family: $font-heading;
   color: $color-black;
   text-transform: uppercase;
 }
 
 .card__title {
-  padding: 10px;
+  padding: $gutter/2;
   color: $color-black;
 }
 
@@ -44,11 +44,11 @@
 
 .card:hover,
 .card__bottom:hover {
-  background-color: $color-grey; //Vantar hjálp hérna SNÆR!!!!
+  background-color: $color-grey;
 }
 
 @media only screen and (min-width: $media-large) {
-  .card__placeholder { //þurfum að laga hér að stærðin breytist öðruvísi en hin kortin eftir 1000
+  .card__placeholder {
     min-height: 235px;
     background-color: $color-lightGrey;
     transition: $hover-transition;

@@ -9,7 +9,7 @@
     font-size: $medium-font-size;
     font-weight: bold;
     background-color: $color-lightGrey;
-    border-radius: 10px;
+    border-radius: $gutter/2;
     box-shadow: 0 3px rgba(0, 0, 0, 0.4);
     transition: $hover-transition;
 
@@ -20,7 +20,7 @@
 }
 
 .navBar__button--active {
-  background-color: $color-green !important; //has to be important because of 
+  background-color: $color-green !important; //has to be important to function
 }
 
 @media only screen and (min-width: $media-small) {

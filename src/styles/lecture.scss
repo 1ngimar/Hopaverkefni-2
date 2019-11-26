@@ -5,7 +5,7 @@
 }
 
 .lecture__container > * {
-  padding: 20px 0;
+  padding: $gutter 0;
 }
 
 .lecture__video {
@@ -18,7 +18,7 @@
   position: relative;
   width: 100%;
   height: 500px;
-  background-image: url(/img/code.jpg);
+  background-image: url("/img/code.jpg");
   background-repeat: no-repeat;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .lecture__quote {
-  padding: 20px;
+  padding: $gutter;
   background-color: $color-lightGrey;
 }
 
@@ -68,17 +68,17 @@
   font-family: "Courier New";
 }
 
-footer {
+.lecture__footer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.lecture__button {
+.lecture__footer__button {
   display: flex;
   align-items: center;
-  padding: $gutter / 2;
-  margin: $gutter / 2;
+  padding: $gutter/2;
+  margin: $gutter/2;
   font-family: "Courier New";
   font-size: $primary-font-size;
   border: 0;
@@ -89,9 +89,9 @@ footer {
   }
 }
 
-.lecture__link {
-  padding: $gutter / 2;
-  margin: $gutter / 2;
+.lecture__footer__link {
+  padding: $gutter/2;
+  margin: $gutter/2;
   font-family: "Courier New";
   font-size: $primary-font-size;
   color: $color-black;
