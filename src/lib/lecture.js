@@ -19,7 +19,6 @@ function setBannerData(lecture) {
   title.innerHTML = lecture.title;
 }
 
-
 function createContent(content) {
   const container = document.querySelector('.lecture__container');
 
