@@ -71,7 +71,7 @@ hth179@hi.is
 * Ingimar Logi Guðlaugsson
 ilg5@hi.is
 
-* Sólveig Ásta Friðriðriksdóttir 
+* Sólveig Ásta Friðriksdóttir
 saf10@hi.is
 
 ## Verkefnalýsing
