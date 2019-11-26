@@ -40,7 +40,8 @@ export function createCards(lectures, cards, finishedLectures) {
     const lecture = lectures[i];
     let finishedLecture = false;
 
-    if (finishedLectures && finishedLectures.length > 0 && finishedLectures.indexOf(lecture.slug) !== -1) {
+    if (finishedLectures && finishedLectures.length > 0
+      && finishedLectures.indexOf(lecture.slug) !== -1) {
       finishedLecture = true;
     }
 

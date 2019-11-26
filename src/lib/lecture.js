@@ -19,9 +19,6 @@ function setBannerData(lecture) {
   title.innerHTML = lecture.title;
 }
 
-function escapeHTML() {
-  return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
 
 function createContent(content) {
   const container = document.querySelector('.lecture__container');
