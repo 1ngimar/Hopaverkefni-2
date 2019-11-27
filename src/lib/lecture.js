@@ -11,7 +11,6 @@ function setLectureTitle(lecture) {
 function setBannerData(lecture) {
   const bannerImage = document.querySelector('.lecture__header__image');
   bannerImage.style.backgroundImage = `url(${lecture.image})`;
-  //  bannerImage.style.backgroundImage = `url('/${lecture.image}')`;
 
   const category = document.querySelector('.lecture__header__category');
   category.innerHTML = lecture.category;
